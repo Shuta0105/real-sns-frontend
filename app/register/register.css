@@ -1,0 +1,29 @@
+.registerWrapper {
+  margin: 0 auto;
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+  box-shadow: 9px 8px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 9px 8px 9px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 9px 8px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+    margin-top: 10px;
+}
+
+.input {
+  width: 300px;
+  outline: none;
+  margin-top: 8px;
+}
+
+.registerButton {
+  width: 100px;
+  margin-top: 10px;
+}

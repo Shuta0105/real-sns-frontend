@@ -1,0 +1,183 @@
+.headerWrapper {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.headerTitle {
+  margin-left: 20px;
+}
+
+.registerButton {
+  margin-right: 20px;
+}
+
+.sidebar {
+  margin: 0;
+  flex: 2.5;
+}
+
+.sidebarWrapper {
+  padding: 10px;
+}
+
+.sidebarMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarMenuIcon {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 12px 8px 6px -5px #777777;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.sidebarMenuIcon:hover {
+  transform: translateY(3px);
+}
+
+.sidebarMenuIcon i {
+  margin-left: 10px;
+}
+
+.sidebarMenuIconTag {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.timeline {
+  margin: 0;
+  flex: 6;
+}
+
+.timelineWrapper {
+  padding: 10px;
+}
+
+.post {
+  padding: 10px;
+  box-shadow: 12px 8px 6px -5px #777777;
+  border-radius: 10px;
+  height: 130px;
+}
+
+.postInputWrapper {
+    display: flex;
+}
+
+.postInput {
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 100%;
+}
+
+.postHr {
+    margin-top: 10px;
+}
+
+.postBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.postIcons {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.postIcon {
+  display: flex;
+  align-items: center;
+}
+
+.postIconTag {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.postButton {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 2px 10px;
+    color: white;
+    background-color: rgba(24, 24, 169, 0.962);
+    margin-right: 10px;
+}
+
+.share {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.shareWrapper {
+  box-shadow: 12px 8px 6px -5px #777777;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.shareTop {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  margin-bottom: 16px;
+}
+
+.shareTopName {
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.shareTopDate {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.shareBody {
+  margin-bottom: 15px;
+}
+
+.shareBodyDesc {
+  margin-left: 50px;
+}
+
+.shareBodyImg {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  margin-top: 10px;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.shareFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -10px;
+}
+
+.shareFooterLeft {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.shareFooterLeft i {
+  margin-right: 5px;
+}
+
+.rightbar {
+  flex: 3.5;
+  padding: 10px;
+}
