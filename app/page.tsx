@@ -8,15 +8,13 @@ import TimeLine from "./components/timeline";
 import Rightbar from "./components/rightbar";
 
 export default function Home() {
-  const router = useRouter();
-
   return (
     <>
       <Topbar />
-      <div style={{display: "flex"}}>
+      <div style={{ display: "flex" }}>
         <Sidebar />
         <TimeLine />
-        <Rightbar/>
+        <Rightbar />
       </div>
     </>
   );

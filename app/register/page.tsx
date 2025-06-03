@@ -26,10 +26,7 @@ const Page = () => {
     }
 
     try {
-      const res = await axios.post(
-        "http://localhost:8000/api/user/register",
-        userInfo
-      );
+      await axios.post("http://localhost:8000/api/user/register", userInfo);
       router.push("/");
     } catch (e) {
       console.log(e);

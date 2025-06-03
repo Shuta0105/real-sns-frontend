@@ -19,7 +19,7 @@ const TimeLine = () => {
       }));
     };
     fetchTimeline();
-  }, []);
+  }, [user?.id]);
 
   return (
     <div className="timeline">

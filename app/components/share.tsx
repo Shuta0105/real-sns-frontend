@@ -3,6 +3,7 @@ import { PostType, UserType } from "../type";
 import axios from "axios";
 import { AuthContext } from "../state/AuthContext";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 const Share = ({ post }: { post: PostType }) => {
   const API_FOLDER = process.env.NEXT_PUBLIC_API_FOLDER;
@@ -19,7 +20,7 @@ const Share = ({ post }: { post: PostType }) => {
       setPostUser(res.data[0]);
     };
     fetchPostUser();
-  }, []);
+  }, [post.user_id]);
 
   useEffect(() => {
     const fetchLikes = async () => {
@@ -31,7 +32,7 @@ const Share = ({ post }: { post: PostType }) => {
       setIsLiked(res.data.isLiked);
     };
     fetchLikes();
-  }, []);
+  }, [post.id, user?.id]);
 
   const handleLike = async () => {
     try {
@@ -39,7 +40,11 @@ const Share = ({ post }: { post: PostType }) => {
         user_id: user?.id,
         post_id: post.id,
       });
-      isLiked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
+      if (isLiked) {
+        setLikes((prev) => prev - 1);
+      } else {
+        setLikes((prev) => prev + 1);
+      }
       setIsLiked(!isLiked);
     } catch (e) {
       console.error(e);
