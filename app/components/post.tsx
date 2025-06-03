@@ -37,7 +37,7 @@ const Post = () => {
     }
 
     try {
-      await axios.post(`${API_URL}`, postInfo);
+      await axios.post(`${API_URL}/api/post`, postInfo);
       window.location.reload();
     } catch (err) {
       console.error(err);
