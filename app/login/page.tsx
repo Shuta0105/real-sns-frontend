@@ -7,6 +7,7 @@ import axios from "axios";
 import { AuthContext } from "../state/AuthContext";
 
 const Page = () => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const router = useRouter();
   const { dispatch } = useContext(AuthContext);
 
@@ -26,7 +27,7 @@ const Page = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/user/login",
+        `${API_URL}/api/user/login`,
         userInfo
       );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data[0] });

@@ -3,6 +3,7 @@ import React, { useContext, useRef, useState } from "react";
 import { AuthContext } from "../state/AuthContext";
 
 const Post = () => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const { user } = useContext(AuthContext);
   const inputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -29,14 +30,14 @@ const Post = () => {
       }
 
       try {
-        await axios.post("http://localhost:8000/api/upload", fileData);
+        await axios.post(`${API_URL}/api/upload`, fileData);
       } catch (err) {
         console.log(err);
       }
     }
 
     try {
-      await axios.post("http://localhost:8000/api/post", postInfo);
+      await axios.post(`${API_URL}`, postInfo);
       window.location.reload();
     } catch (err) {
       console.error(err);

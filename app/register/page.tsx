@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const router = useRouter();
 
   const usernameRef = useRef<HTMLInputElement>(null);
@@ -26,7 +27,7 @@ const Page = () => {
     }
 
     try {
-      await axios.post("http://localhost:8000/api/user/register", userInfo);
+      await axios.post(`${API_URL}/api/user/register`, userInfo);
       router.push("/");
     } catch (e) {
       console.log(e);

@@ -6,13 +6,14 @@ import { PostType } from "../type";
 import { AuthContext } from "../state/AuthContext";
 
 const TimeLine = () => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const { user } = useContext(AuthContext);
   const [posts, setPosts] = useState<PostType[] | null>(null);
 
   useEffect(() => {
     const fetchTimeline = async () => {
       const res = await axios.get(
-        `http://localhost:8000/api/post/timeline/${user?.id}`
+        `${API_URL}/api/post/timeline/${user?.id}`
       );
       setPosts(res.data.sort((post1: PostType, post2: PostType) => {
         return new Date(post2.created_at).getTime() - new Date(post1.created_at).getTime();

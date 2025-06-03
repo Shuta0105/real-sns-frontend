@@ -5,6 +5,7 @@ import { AuthContext } from "../state/AuthContext";
 import dayjs from "dayjs";
 
 const Share = ({ post }: { post: PostType }) => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const API_FOLDER = process.env.NEXT_PUBLIC_API_FOLDER;
   const { user } = useContext(AuthContext);
   const [likes, setLikes] = useState<number>(0);
@@ -14,7 +15,7 @@ const Share = ({ post }: { post: PostType }) => {
   useEffect(() => {
     const fetchPostUser = async () => {
       const res = await axios.get(
-        `http://localhost:8000/api/user/${post.user_id}`
+        `${API_URL}/api/user/${post.user_id}`
       );
       setPostUser(res.data[0]);
     };
@@ -24,7 +25,7 @@ const Share = ({ post }: { post: PostType }) => {
   useEffect(() => {
     const fetchLikes = async () => {
       const res = await axios.post(
-        `http://localhost:8000/api/post/likes/${post.id}`,
+        `${API_URL}/api/post/likes/${post.id}`,
         { userId: user?.id }
       );
       setLikes(res.data.sum);
@@ -35,7 +36,7 @@ const Share = ({ post }: { post: PostType }) => {
 
   const handleLike = async () => {
     try {
-      await axios.post(`http://localhost:8000/api/post/likes`, {
+      await axios.post(`${API_URL}/api/post/likes`, {
         user_id: user?.id,
         post_id: post.id,
       });
