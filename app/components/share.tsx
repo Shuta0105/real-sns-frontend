@@ -3,7 +3,6 @@ import { PostType, UserType } from "../type";
 import axios from "axios";
 import { AuthContext } from "../state/AuthContext";
 import dayjs from "dayjs";
-import Image from "next/image";
 
 const Share = ({ post }: { post: PostType }) => {
   const API_FOLDER = process.env.NEXT_PUBLIC_API_FOLDER;

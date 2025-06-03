@@ -1,7 +1,6 @@
 "use client";
 
 import "./page.css";
-import { useRouter } from "next/navigation";
 import Topbar from "./components/topbar";
 import Sidebar from "./components/sidebar";
 import TimeLine from "./components/timeline";
