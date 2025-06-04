@@ -14,9 +14,7 @@ const Share = ({ post }: { post: PostType }) => {
 
   useEffect(() => {
     const fetchPostUser = async () => {
-      const res = await axios.get(
-        `${API_URL}/api/user/${post.user_id}`
-      );
+      const res = await axios.get(`${API_URL}/api/user/${post.user_id}`);
       setPostUser(res.data[0]);
     };
     fetchPostUser();
@@ -24,10 +22,9 @@ const Share = ({ post }: { post: PostType }) => {
 
   useEffect(() => {
     const fetchLikes = async () => {
-      const res = await axios.post(
-        `${API_URL}/api/post/likes/${post.id}`,
-        { userId: user?.id }
-      );
+      const res = await axios.post(`${API_URL}/api/post/likes/${post.id}`, {
+        userId: user?.id,
+      });
       setLikes(res.data.sum);
       setIsLiked(res.data.isLiked);
     };

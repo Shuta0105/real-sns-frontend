@@ -3,7 +3,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "../state/AuthContext";
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 import Image from "next/image";
 
 const Topbar = () => {

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../state/AuthContext";
+import Image from "next/image";
 
 const Post = () => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -55,14 +56,14 @@ const Post = () => {
     <div className="post">
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="postInputWrapper">
-          <img
+          <Image
             src={
               profile ||
               "https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_1.png"
             }
+            width={50}
+            height={50}
             style={{
-              width: "50px",
-              height: "50px",
               borderRadius: "50%",
               objectFit: "cover",
             }}
