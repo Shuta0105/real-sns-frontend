@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../state/AuthContext";
 
 const Post = () => {
@@ -7,6 +7,7 @@ const Post = () => {
   const { user } = useContext(AuthContext);
   const inputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
+  const [profile, setProfile] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,10 +45,29 @@ const Post = () => {
     }
   };
 
+  useEffect(() => {
+    if (user?.profile) {
+      setProfile(user.profile);
+    }
+  }, [user]);
+
   return (
     <div className="post">
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="postInputWrapper">
+          <img
+            src={
+              profile ||
+              "https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_6.png"
+            }
+            style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+            alt=""
+          />
           <input
             className="postInput"
             type="text"

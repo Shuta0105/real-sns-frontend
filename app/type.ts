@@ -9,6 +9,7 @@ export type PostType = {
 export type UserType = {
   id: number;
   username: string;
+  profile: string;
 }
 
 export interface AuthState {

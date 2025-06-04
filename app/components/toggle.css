@@ -1,0 +1,22 @@
+.toggle {
+    padding: 20px;
+}
+
+.toggleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggleButton {
+    border: none;
+    background-color: gray;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.toggleButton.active {
+    background-color: aqua;
+}
