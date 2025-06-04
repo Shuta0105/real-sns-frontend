@@ -10,6 +10,26 @@
   margin-left: 20px;
 }
 
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.headerRightUser {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.headerRightUserName {
+  font-weight: bold;
+}
+
+.headerUserIcon {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
 .registerButton {
   margin-right: 20px;
 }

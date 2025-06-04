@@ -58,7 +58,7 @@ const Post = () => {
           <img
             src={
               profile ||
-              "https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_6.png"
+              "https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_1.png"
             }
             style={{
               width: "50px",

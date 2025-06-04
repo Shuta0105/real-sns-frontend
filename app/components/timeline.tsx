@@ -11,7 +11,7 @@ const TimeLine = () => {
   const { user } = useContext(AuthContext);
   const [posts, setPosts] = useState<PostType[] | null>(null);
   const [allPosts, setAllPosts] = useState<PostType[] | null>(null);
-  const [toggle, setToggle] = useState("");
+  const [toggle, setToggle] = useState("forYou");
 
   useEffect(() => {
     const fetchTimelineForFollowing = async () => {
